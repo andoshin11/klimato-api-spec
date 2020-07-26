@@ -1,0 +1,8 @@
+Card:
+  $ref: './Card.yml'
+
+CardMaster:
+  $ref: './CardMaster.yml'
+
+Site:
+  $ref: './Site.yml'

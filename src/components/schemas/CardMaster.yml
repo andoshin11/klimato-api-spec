@@ -1,0 +1,17 @@
+type: object
+required:
+  - cid
+  - name
+  - type
+properties:
+  cid:
+    type: integer
+    format: int32
+  name:
+    type: string
+  type:
+    type: integer
+    format: int32
+  remarks:
+    type: string
+    nullable: true

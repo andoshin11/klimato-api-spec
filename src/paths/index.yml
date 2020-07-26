@@ -1,0 +1,3 @@
+# Site
+/sites:
+  $ref: './site/index.yml'

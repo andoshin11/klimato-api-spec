@@ -1,0 +1,27 @@
+type: object
+required:
+  - id
+  - cid
+  - rarity
+  - is_opened
+  - illust_type
+properties:
+  id:
+    type: integer
+    format: int32
+  cid:
+    type: integer
+    format: int32
+  rarity:
+    type: integer
+    format: int32
+    description: 'ノーマル: 0, スーパーレア: 1, ウルトラレア 2, ウルトラシークレットレア: 3, シークレットレア: 4, パラレルレア: 5, アルティメットレア: 6, ホロレア: 7, ゴールドレア: 8, ゴールドシークレットレア: 9, エクストラシークレットレア: 10, コレクターズレア: 11, KCレア: 12, ミレニアムゴールドレア: 13, レア: 14, ノーマルレア: 15'
+  illust_type:
+    type: integer
+    format: int32
+    description: 'イラストタイプ。デフォルト: 0'
+  is_opened:
+    type: boolean
+    description: '開封状態'
+  remarks:
+    type: string

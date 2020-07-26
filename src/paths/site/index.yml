@@ -1,0 +1,52 @@
+get:
+  tags:
+    - Site
+  operationId: getSites
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - sites
+            properties:
+              sites:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Site'
+  security:
+    - bearerAuth: []
+
+post:
+  tags:
+    - Site
+  operationId: createSite
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - name
+            - url
+          properties:
+            name:
+              type: string
+            url:
+              type: string
+  responses:
+    201:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - site
+            properties:
+              site:
+                $ref: '#/components/schemas/Site'
+  security:
+    - bearerAuth: []
