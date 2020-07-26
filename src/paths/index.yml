@@ -1,3 +1,9 @@
+# Card
+/cards:
+  $ref: './card/index.yml'
+/cards/{card_id}:
+  $ref: './card/card.yml'
+
 # Card Master
 /card_masters:
   $ref: './cardMaster/index.yml'

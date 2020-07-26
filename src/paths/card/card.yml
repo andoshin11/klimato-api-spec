@@ -1,0 +1,108 @@
+get:
+  tags:
+    - Card
+  operationId: getCard
+  parameters:
+    - in: path
+      name: card_id
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card ID
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card
+            properties:
+              card:
+                $ref: '#/components/schemas/Card'
+  security:
+    - bearerAuth: []
+
+put:
+  tags:
+    - Card
+  operationId: updateCard
+  parameters:
+    - in: path
+      name: card_id
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card ID
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            cid:
+              type: integer
+              format: int32
+            rarity:
+              type: integer
+              format: int32
+              description: 'ノーマル: 0, スーパーレア: 1, ウルトラレア 2, ウルトラシークレットレア: 3, シークレットレア: 4, パラレルレア: 5, アルティメットレア: 6, ホロレア: 7, ゴールドレア: 8, ゴールドシークレットレア: 9, エクストラシークレットレア: 10, コレクターズレア: 11, KCレア: 12, ミレニアムゴールドレア: 13, レア: 14, ノーマルレア: 15'
+            illust_type:
+              type: integer
+              format: int32
+              description: 'イラストタイプ。デフォルト: 0'
+            is_opened:
+              type: boolean
+              description: '開封状態'
+            remarks:
+              type: string
+              nullable: true
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card
+            properties:
+              card:
+                $ref: '#/components/schemas/Card'
+  security:
+    - bearerAuth: []
+
+
+delete:
+  tags:
+    - Card
+  operationId: deleteCard
+  parameters:
+    - in: path
+      name: card_id
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card ID
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              message:
+                type: string
+                example: 'Deleted item!'
+  security:
+    - bearerAuth: []
