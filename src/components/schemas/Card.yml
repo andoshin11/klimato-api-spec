@@ -5,6 +5,7 @@ required:
   - rarity
   - is_opened
   - illust_type
+  - remarks
 properties:
   id:
     type: integer
@@ -25,3 +26,4 @@ properties:
     description: '開封状態'
   remarks:
     type: string
+    nullable: true

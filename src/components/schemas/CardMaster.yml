@@ -3,6 +3,7 @@ required:
   - cid
   - name
   - type
+  - remarks
 properties:
   cid:
     type: integer
