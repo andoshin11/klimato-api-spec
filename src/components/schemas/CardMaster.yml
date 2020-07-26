@@ -12,6 +12,7 @@ properties:
   type:
     type: integer
     format: int32
+    description: '魔法: 0, 罠: 1, 通常モンスター: 2, 効果モンスター: 3, 融合モンスター: 4, シンクロモンスター: 5, 儀式モンスター: 6, リンクモンスター: 7, エクシーズモンスター: 8, ペンデュラムモンスター: 9'
   remarks:
     type: string
     nullable: true

@@ -1,0 +1,99 @@
+get:
+  tags:
+    - CardMaster
+  operationId: getCardMaster
+  parameters:
+    - in: path
+      name: cid
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card Master ID
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card_master
+            properties:
+              card_master:
+                $ref: '#/components/schemas/CardMaster'
+  security:
+    - bearerAuth: []
+
+put:
+  tags:
+    - CardMaster
+  operationId: updateCardMaster
+  parameters:
+    - in: path
+      name: cid
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card Master ID
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            type:
+              type: integer
+              format: int32
+              description: '魔法: 0, 罠: 1, 通常モンスター: 2, 効果モンスター: 3, 融合モンスター: 4, シンクロモンスター: 5, 儀式モンスター: 6, リンクモンスター: 7, エクシーズモンスター: 8, ペンデュラムモンスター: 9'
+            remarks:
+              type: string
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card_master
+            properties:
+              card_master:
+                $ref: '#/components/schemas/CardMaster'
+  security:
+    - bearerAuth: []
+
+
+delete:
+  tags:
+    - CardMaster
+  operationId: deleteCardMaster
+  parameters:
+    - in: path
+      name: cid
+      schema:
+        type: integer
+        format: int32
+        example: 15235
+      required: true
+      description: Card Master ID
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              message:
+                type: string
+                example: 'Deleted item!'
+  security:
+    - bearerAuth: []

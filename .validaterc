@@ -7,7 +7,7 @@
         "warning",
         "lower_camel_case"
       ],
-      "no_summary": "warning",
+      "no_summary": "off",
       "no_array_responses": "error",
       "parameter_order": "warning",
       "operation_id_naming_convention": "warning"
@@ -31,7 +31,7 @@
         "error",
         "lower_snake_case"
       ],
-      "duplicate_path_parameter": "error"
+      "duplicate_path_parameter": "off"
     },
     "responses": {
       "inline_response_schema": "off"

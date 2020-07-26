@@ -1,0 +1,73 @@
+get:
+  tags:
+    - CardMaster
+  operationId: getCardMasters
+  parameters:
+    - in: query
+      name: type
+      schema:
+        type: integer
+        format: int32
+        example: 1
+      description: Card Master Type
+    - in: query
+      name: include
+      schema:
+        type: string
+      description: Card Name Hint
+  responses:
+    200:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card_masters
+            properties:
+              card_masters:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CardMaster'
+  security:
+    - bearerAuth: []
+
+post:
+  tags:
+    - CardMaster
+  operationId: createCardMaster
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - cid
+            - name
+            - type
+          properties:
+            cid:
+              type: integer
+              format: int32
+            name:
+              type: string
+            type:
+              type: integer
+              format: int32
+              description: '魔法: 0, 罠: 1, 通常モンスター: 2, 効果モンスター: 3, 融合モンスター: 4, シンクロモンスター: 5, 儀式モンスター: 6, リンクモンスター: 7, エクシーズモンスター: 8, ペンデュラムモンスター: 9'
+            remarks:
+              type: string
+  responses:
+    201:
+      description: Successful Operation
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - card_master
+            properties:
+              card_master:
+                $ref: '#/components/schemas/CardMaster'
+  security:
+    - bearerAuth: []

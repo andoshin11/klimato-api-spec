@@ -1,3 +1,9 @@
+# Card Master
+/card_masters:
+  $ref: './cardMaster/index.yml'
+/card_masters/{cid}:
+  $ref: './cardMaster/cardMaster.yml'
+
 # Site
 /sites:
   $ref: './site/index.yml'
